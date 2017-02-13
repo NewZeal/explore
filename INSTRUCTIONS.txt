@@ -1,0 +1,41 @@
+Hi Erlan,
+
+Your task is as follows:
+
+Create a simple module from scratch with the following
+
+- A .info.yml file (obviously)
+
+- A Field formatter, which goes in /src/Plugin/Field/FieldFormatter and the filename has to have the same name as the
+ class.  Follow the instructions here if you like: https://www.drupal
+ .org/docs/8/creating-custom-modules/create-a-custom-field-formatter  . Make this field formatter apply to any short
+ text field and places the text into a div as follows: <div class="my-format">[text here]</div>
+
+- A preprocess function, which goes in the .module file.  When you install Drupal 8 it comes with an article content
+type and a field called field_image.  Create a preprocess function for that field and a theme template to put in your
+ theme that targets that field in the article content type (and not elsewhere).  Create a new variable to output in
+ that twig template that displays the title of the node to which the image belongs.
+ Suggestions:
+ Use function
+ function MODULENAME_preprocess_field(&$variables) {
+ }
+
+ Enable Devel module and use ksm() like this
+ ksm($variables);
+
+ Investigate the ksm output to find the object attached to the field
+
+ Create an output variable like this
+ $variables['title'] = $entity->get('title')->getValue()[0]['value'];
+
+ Place that variable in the twig template
+
+
+
+I don't expect you to know Drupal 8 inside and out which is why I have supplied most of the instructions for the task
+.  There are just a few blanks for you to fill in.  Please document what you do and document the module in the manner
+ which it is meant to be.
+
+ When finished push the module and the template file to this repo so I can test it.
+
+ Good luck
