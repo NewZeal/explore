@@ -1,0 +1,4 @@
+name: Custom formatter
+type: module
+description: Test
+core: 8.x
