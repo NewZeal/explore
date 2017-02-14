@@ -12,7 +12,7 @@ use Drupal\Core\Field\FieldItemListInterface;
  *   id = "Custom",
  *   label = @Translation("Custom"),
  *   field_types = {
- *     "string"
+ *     "string", "text"
  *   }
  * )
  */
